@@ -8,40 +8,42 @@ namespace NotContains
         {
             Random r = new Random();
             int[] x = new int[5];
-            int index = 0;
 
+            int index = 0;
             while (index < x.Length)
             {
-                x[index] = r.Next(100);
-                Console.WriteLine(x[index]);
+                x[index] = r.Next(50);
+                Console.WriteLine(x[index].ToString());
                 index++;
+
             }
 
+            Console.WriteLine(notContains(x).ToString());
+
+            Console.ReadKey();
+        }
+
+       public static int notContains(int[] array)
+        {
+            int index = 0;
+
             Console.WriteLine("*************");
-            int min = x[0];
+            int min = array[0];
             index = 1;
 
-            while (index < x.Length)
+            while (index < array.Length)
             {
-                if (x[index] < min)
+                if (array[index] < min)
                 {
-                    min = x[index];
+                    min = array[index];
                 }
                 index++;
             }
-            if (min <= 0) 
+            if (min <= 0)
             {
-                Console.WriteLine("Error");
+                throw new Exception("Minimum Number is 0 or < 0");
             }
-
-            Console.WriteLine("Min in array -> " + min);
-            Console.WriteLine("Array NotContains -> " + --min);
-
-            while (min > 1)
-            {
-                Console.WriteLine(--min);
-            }
-            Console.ReadKey();
+            return --min;
         }
     }
 }
