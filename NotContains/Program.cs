@@ -15,18 +15,15 @@ namespace NotContains
                 x[index] = r.Next(50);
                 Console.WriteLine(x[index].ToString());
                 index++;
-
             }
 
             Console.WriteLine(notContains(x).ToString());
-
             Console.ReadKey();
         }
 
        public static int notContains(int[] array)
         {
             int index = 0;
-
             Console.WriteLine("*************");
             int min = array[0];
             index = 1;
